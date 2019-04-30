@@ -1,0 +1,64 @@
+Req Thread =    1
+Res Thread =    1
+Runtime(ms)= 1523 
+Thread 1   =    5
+Thread 2   =    0
+Thread 3   =    0
+Thread 4   =    0
+Thread 5   =    0
+_________________
+Req Thread =    1
+Res Thread =    3
+Runtime(ms)=  495
+Thread 1   =    5
+Thread 2   =    0
+Thread 3   =    0
+Thread 4   =    0
+Thread 5   =    0
+_________________
+Req Thread =    3
+Res Thread =    1
+Runtime(ms)= 1201
+Thread 1   =    5   
+Thread 2   =    3
+Thread 3   =    2
+Thread 4   =    0
+Thread 5   =    0
+_________________
+Req Thread =    3
+Res Thread =    3
+Runtime(ms)=  516
+Thread 1   =    4  
+Thread 2   =    3
+Thread 3   =    3
+Thread 4   =    0
+Thread 5   =    0
+_________________
+Req Thread =    5
+Res Thread =    5
+Runtime(ms)=  368
+Thread 1   =    4
+Thread 2   =    2
+Thread 3   =    2
+Thread 4   =    1
+Thread 5   =    2
+_________________
+Req Thread =    8
+Res Thread =    5
+Runtime(ms)=  410
+Thread 1   =    3
+Thread 2   =    4
+Thread 3   =    2
+Thread 4   =    2
+Thread 5   =    1
+Thread 6   =    4
+Thread 7   =    4
+Thread 8   =    2
+_________________
+
+The DNS lookup takes the most time, meaning that having multiple requester threads won't affect the runtime too much.
+Having more resolver threads speeds up the runtime significantly, while singlethreading the requester is pretty slow.
+The graph does show this, as no matter how many requester threads you have you will always go pretty slow if there was 
+no dependency on the number of resolver. When the number of resolver increases the number time decreases
+
+When you run for the first time the times are skewed. Concurrent reads speeds up lookup times which is odd.
