@@ -1,5 +1,3 @@
-# CSCI3753 Operating Systems
+# Operating Systems
 
-Professor: Tam Vu
-
-TA: Anh Nguyen
+Kernal Compile, LKM, Thread-Safe Multithreading, Paging, Disk Scanning 
